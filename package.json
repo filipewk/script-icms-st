@@ -1,0 +1,29 @@
+{
+  "name": "cade",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "npx sucrase-node src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "xml2js": "^0.4.23",
+    "selenium-webdriver": "^4.0.0-alpha.7",
+    "commander": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.14",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "eslint": "^7.3.1",
+    "eslint-config-standard-with-typescript": "^11.0.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "sucrase": "^3.15.0",
+    "typescript": "^3.9.5"
+  }
+}
