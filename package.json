@@ -1,8 +1,8 @@
 {
-  "name": "cade",
+  "name": "script-icms-st-ts",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "cli.ts",
   "scripts": {
     "start": "npx sucrase-node src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
