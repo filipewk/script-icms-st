@@ -24,8 +24,7 @@ import { makeResultOfIcmsSt } from './src/main/factories/result-icms-st-factory'
       const mva12 = commander.mva12
       const mva4 = commander.mva4
       const aliquotaInterna = commander.aliquota
-      const gnre = commander.gerargnre
-      if (gnre) {
+      if (commander.gerargnre) {
         const app = (await import('./src/main/factories/generate-gnre-factory')).default()
         await app.generate({ numeroNfe, dataVencimento, mva12, mva4, aliquotaInterna })
       }
