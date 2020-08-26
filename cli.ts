@@ -1,5 +1,5 @@
 ﻿import commander from 'commander'
-import { makeGenerateGnre } from './src/main/factories/generate-gnre-factory'
+import { makeResultOfIcmsSt } from './src/main/factories/result-icms-st-factory'
 
 (async () => {
   /**
@@ -7,6 +7,7 @@ import { makeGenerateGnre } from './src/main/factories/generate-gnre-factory'
    */
   commander
     .version('v1')
+    .option('-gnre, --gerargnre [value]', 'Colocar este comando para gerar gnre')
     .option('-a, --arquivo [value]', 'Digitar o nome do arquivo para leitura')
     .option('-d, --data [value]', 'Digitar a data do vencimento da GNRE')
     .option('-m12, --mva12 [value]', 'Digitar o valor da mva 12% ')
@@ -14,7 +15,7 @@ import { makeGenerateGnre } from './src/main/factories/generate-gnre-factory'
     .option('-al, --aliquota [value]', 'Digitar a aliquota interna do estado')
     .parse(process.argv)
   /**
-   * node cli -a 487348 -d 31/12/2020
+   * node cli -gnre -d 31/12/2020 -a 487348
    */
   try {
     if (commander.arquivo) {
@@ -23,9 +24,13 @@ import { makeGenerateGnre } from './src/main/factories/generate-gnre-factory'
       const mva12 = commander.mva12
       const mva4 = commander.mva4
       const aliquotaInterna = commander.aliquota
-      const gnre = makeGenerateGnre()
-      await gnre.generate({ numeroNfe, dataVencimento, mva12, mva4, aliquotaInterna })
-      return
+      const gnre = commander.gerargnre
+      if (gnre) {
+        const app = (await import('./src/main/factories/generate-gnre-factory')).default()
+        await app.generate({ numeroNfe, dataVencimento, mva12, mva4, aliquotaInterna })
+      }
+      const interfaceSt = makeResultOfIcmsSt()
+      interfaceSt.result({ numeroNfe, mva12, mva4, aliquotaInterna })
     }
   } catch (error) {
     console.log('Erro na leitura do XML')

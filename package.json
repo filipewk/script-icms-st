@@ -4,7 +4,7 @@
   "description": "",
   "main": "cli.ts",
   "scripts": {
-    "start": "npx sucrase-node src/app.ts",
+    "start": "npx sucrase-node cli.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
