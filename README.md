@@ -3,7 +3,8 @@
 </h1>
 
 <h3 align="center">
-    Um bot para calcular o ICMS ST de uma nota fiscal a partir de um XML e emitir a GNRE em poucos segundos.
+    Um bot para calcular o ICMS ST de uma nota fiscal a partir de um XML e emitir a GNRE em poucos segundos. <br>
+    *somente no estado do Paraná.
 </h3>
 
 ## Como instalar e iniciar o bot?
@@ -22,7 +23,7 @@
 
 ### 7. Na pasta do BOT coloque os arquivos XML para leitura na pasta `dist/data/xml`
 
-### 8. O nome do arquivo XML tem que ser o mesmo que sera passado em Numero da NFE no passo a baixo.
+### 8. O nome do arquivo XML tem que ser o mesmo que sera passado em "numero da NFE" no passo a baixo.
 
 ### 9. Execute `run-bot.bat` e preencha os dados (numero da NFE, mva a 12%, mva a 04%, aliquota Interna, data de vencimento).
 
