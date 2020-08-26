@@ -1,5 +1,5 @@
-﻿import commander from 'commander'
-import { makeResultOfIcmsSt } from './main/factories/result-icms-st-factory'
+﻿import { makeResultOfIcmsSt } from './main/factories/result-icms-st-factory'
+import commander from 'commander'
 
 (async () => {
   /**
@@ -21,9 +21,18 @@ import { makeResultOfIcmsSt } from './main/factories/result-icms-st-factory'
     if (commander.arquivo) {
       const numeroNfe = commander.arquivo
       const dataVencimento = commander.data
-      const mva12 = commander.mva12
-      const mva4 = commander.mva4
-      const aliquotaInterna = commander.aliquota
+      let mva12 = commander.mva12
+      let mva4 = commander.mva4
+      let aliquotaInterna = commander.aliquota
+      if (mva12 === true) {
+        mva12 = undefined
+      }
+      if (mva4 === true) {
+        mva4 = undefined
+      }
+      if (aliquotaInterna === true) {
+        aliquotaInterna = undefined
+      }
       if (commander.gerargnre) {
         const app = (await import('./main/factories/generate-gnre-factory')).default()
         await app.generate({ numeroNfe, dataVencimento, mva12, mva4, aliquotaInterna })
