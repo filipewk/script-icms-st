@@ -40,7 +40,6 @@ export class ResultIcmsSt implements IcmsSt {
         if (aliquotaICMS === 4) {
           mva = parseFloat(this.calculatorSt.handleMva(cliComandsResultParams.mva12, cliComandsResultParams.mva4).mva4)
         }
-        console.log(cliComandsResultParams.mva12)
 
         try {
           const itemIpi = parseFloat(XmlProducts[key].imposto[0].IPI[0].IPITrib[0].vIPI)
