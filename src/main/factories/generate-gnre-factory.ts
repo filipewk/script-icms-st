@@ -1,4 +1,4 @@
-﻿import { GenerateGnre } from '../selenium/generate-gnre'
+﻿import { GenerateGnre } from '../bot/generate-gnre'
 import { makeResultOfXml } from './xml-result-factory'
 import { makeResultOfIcmsSt } from './result-icms-st-factory'
 
