@@ -13,7 +13,7 @@
 
 ### 2. Baixe o bot em: https://github.com/filipewk/script-icms-st/archive/master.zip
 
-### 3. Confira a versão do seu chrome e baixe o ChromeDriver com a versão correta a baixo.
+### 3. Confira a versão do seu chrome e baixe o ChromeDriver com a versão correta abaixo.
 
 ### 4. Baixe o ChromeDriver em: https://chromedriver.chromium.org/downloads
 
@@ -23,7 +23,7 @@
 
 ### 7. Na pasta do BOT coloque os arquivos XML para leitura na pasta `dist/data/xml`
 
-### 8. O nome do arquivo XML tem que ser o mesmo que sera passado em "numero da NFE" no passo a baixo.
+### 8. O nome do arquivo XML tem que ser o mesmo que sera passado em "numero da NFE" no passo abaixo.
 
 ### 9. Execute `run-bot.bat` e preencha os dados (numero da NFE, mva a 12%, mva a 04%, aliquota Interna, data de vencimento).
 
