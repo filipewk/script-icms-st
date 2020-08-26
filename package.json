@@ -1,11 +1,11 @@
 {
   "name": "script-icms-st-ts",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "cli.ts",
   "scripts": {
-    "start": "npx sucrase-node cli.ts",
-    "build": "npx sucrase-node cli.ts",
+    "start": "node dist/cli.js",
+    "build": "rimraf dist && tsc && copyfiles -u 1 src/data/**/* dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -18,6 +18,7 @@
   "devDependencies": {
     "@types/node": "^14.6.0",
     "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "copyfiles": "^2.3.0",
     "eslint": "^7.7.0",
     "eslint-config-standard-with-typescript": "^11.0.1",
     "eslint-plugin-import": "^2.22.0",

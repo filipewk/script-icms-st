@@ -6,7 +6,7 @@ import fs from 'fs'
 export class XmlConverter implements XmlToString, XmlParseJson {
   read (xmlToRead: string): string {
     try {
-      const xml_string = fs.readFileSync(`./src/data/xml/${xmlToRead}.xml`, 'utf8')
+      const xml_string = fs.readFileSync(`./data/xml/${xmlToRead}.xml`, 'utf8')
       return xml_string
     } catch (err) {
       if (err.code !== 'ENOENT') throw err

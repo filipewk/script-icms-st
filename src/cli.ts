@@ -1,5 +1,5 @@
 ﻿import commander from 'commander'
-import { makeResultOfIcmsSt } from './src/main/factories/result-icms-st-factory'
+import { makeResultOfIcmsSt } from './main/factories/result-icms-st-factory'
 
 (async () => {
   /**
@@ -25,13 +25,13 @@ import { makeResultOfIcmsSt } from './src/main/factories/result-icms-st-factory'
       const mva4 = commander.mva4
       const aliquotaInterna = commander.aliquota
       if (commander.gerargnre) {
-        const app = (await import('./src/main/factories/generate-gnre-factory')).default()
+        const app = (await import('./main/factories/generate-gnre-factory')).default()
         await app.generate({ numeroNfe, dataVencimento, mva12, mva4, aliquotaInterna })
       }
       const interfaceSt = makeResultOfIcmsSt()
       interfaceSt.result({ numeroNfe, mva12, mva4, aliquotaInterna })
     }
   } catch (error) {
-    console.log('Erro na leitura do XML')
+    console.log(error)
   }
 })()
