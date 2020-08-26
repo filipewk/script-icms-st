@@ -5,6 +5,7 @@
   "main": "cli.ts",
   "scripts": {
     "start": "npx sucrase-node cli.ts",
+    "build": "npx sucrase-node cli.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -23,6 +24,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "rimraf": "^3.0.2",
     "sucrase": "^3.15.0",
     "typescript": "^3.9.5"
   }
