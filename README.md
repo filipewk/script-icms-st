@@ -4,7 +4,7 @@
 
 <h3 align="center">
     Um bot para calcular o ICMS ST de uma nota fiscal a partir de um XML e emitir a GNRE em poucos segundos. <br>
-    *somente no estado do Paraná.
+    *somente para GNRE no estado do Paraná.
 </h3>
 
 ## Como instalar e iniciar o bot?
