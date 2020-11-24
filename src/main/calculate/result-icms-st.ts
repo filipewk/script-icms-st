@@ -3,12 +3,12 @@ import { IcmsSt, CliComandsResultParams } from '../../domain/usecases/calculate/
 import { ReadXml } from '../../domain/usecases/xml/read-xml'
 
 export class ResultIcmsSt implements IcmsSt {
-  constructor (
+  constructor(
     private readonly convertedJson: ReadXml,
     private readonly calculatorSt: IcmsStCalculator
-  ) {}
+  ) { }
 
-  result (cliComandsResultParams: CliComandsResultParams): string {
+  result(cliComandsResultParams: CliComandsResultParams): string {
     const {
       XmlProducts,
       nNFe
@@ -25,29 +25,42 @@ export class ResultIcmsSt implements IcmsSt {
         const interfaceResult = []
         let mva: number
         let vIPI: number
+        let vICMS: number
+        let vBCICMS: number
+        let aliquotaICMS: number
 
         const amountOfProduct = parseInt(XmlProducts[key].prod[0].qCom)
-        const vBCICMS = parseFloat(XmlProducts[key].imposto[0].ICMS[0].ICMS00[0].vBC)
-        const vICMS = parseFloat(XmlProducts[key].imposto[0].ICMS[0].ICMS00[0].vICMS)
-        const aliquotaICMS = parseFloat(XmlProducts[key].imposto[0].ICMS[0].ICMS00[0].pICMS)
         const productCode = XmlProducts[key].prod[0].cProd
         const productDescription = XmlProducts[key].prod[0].xProd
         const aliquotaInternaICMS = this.calculatorSt.handleAliquotaInterna(cliComandsResultParams.aliquotaInterna)
+
+        try {
+          const itemIpi = parseFloat(XmlProducts[key].imposto[0].IPI[0].IPITrib[0].vIPI)
+          if (itemIpi) {
+            vIPI = itemIpi
+          }
+        } catch (error) {
+          vIPI = 0
+        }
+
+        try {
+          aliquotaICMS = parseFloat(XmlProducts[key].imposto[0].ICMS[0].ICMS00[0].pICMS)
+          vBCICMS = parseFloat(XmlProducts[key].imposto[0].ICMS[0].ICMS00[0].vBC)
+          const itemIcms = parseFloat(XmlProducts[key].imposto[0].ICMS[0].ICMS00[0].vICMS)
+          if (itemIcms) {
+            vICMS = itemIcms
+          }
+        } catch (error) {
+          vBCICMS = parseFloat(XmlProducts[key].prod[0].vProd)
+          vICMS = (parseFloat(XmlProducts[key].prod[0].vProd) * 0.12)
+          aliquotaICMS = 12
+        }
 
         if (aliquotaICMS === 12) {
           mva = parseFloat(this.calculatorSt.handleMva(cliComandsResultParams.mva12, cliComandsResultParams.mva4).mva12)
         }
         if (aliquotaICMS === 4) {
           mva = parseFloat(this.calculatorSt.handleMva(cliComandsResultParams.mva12, cliComandsResultParams.mva4).mva4)
-        }
-
-        try {
-          const itemIpi = parseFloat(XmlProducts[key].imposto[0].IPI[0].IPITrib[0].vIPI)
-          if (itemIpi !== undefined) {
-            vIPI = itemIpi
-          }
-        } catch (error) {
-          vIPI = 0
         }
 
         const baseCalculoIcms = this.calculatorSt.calculateBaseIcmsSt(vBCICMS, vIPI, mva)
