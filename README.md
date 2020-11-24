@@ -30,7 +30,20 @@
 
 ## :rocket: 5 minutes quick start
 
-...
+### 1. Instalar
+<div> 
+  <img src="readme/install.gif" height="425">
+</div>
+
+### 2. Colocar o xml para a leitura
+<div> 
+  <img src="readme/xml.gif" height="425">
+</div>
+
+### :white_check_mark: Rodar o BOT
+<div> 
+  <img src="readme/runbot.gif" height="425">
+</div>
 
 ## :v: Contribuidores
 
