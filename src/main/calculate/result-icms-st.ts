@@ -36,7 +36,7 @@ export class ResultIcmsSt implements IcmsSt {
 
         try {
           const itemIpi = parseFloat(XmlProducts[key].imposto[0].IPI[0].IPITrib[0].vIPI)
-          if (itemIpi) {
+          if (itemIpi || itemIpi === 0) {
             vIPI = itemIpi
           }
         } catch (error) {
