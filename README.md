@@ -1,5 +1,5 @@
 ﻿<h1 align="center">
-  GNRE Generate
+  GNRE Generate - PR
 </h1>
 
 <h3 align="center">
