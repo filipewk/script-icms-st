@@ -1,55 +1,60 @@
-﻿<h1 align="center">
-  GNRE Generate
-</h1>
+# GNRE Generate
 
-<h3 align="center">
+<p align="center">
     Um bot para calcular o ICMS ST de uma nota fiscal a partir de um XML e emitir a GNRE em poucos segundos. <br>
-    *somente no estado do Paraná.
-</h3>
+    <em>Somente no estado do Paraná.</em>
+</p>
 
-## Como instalar e iniciar o bot?
+## 🚀 Como instalar e iniciar o bot?
 
-### 1. Baixe o node em: https://nodejs.org/en/download/
+### 1. Instalação do Node.js
+- Baixe e instale o Node.js a partir do [site oficial](https://nodejs.org/en/download/).
 
-### 2. Baixe o bot em: https://github.com/filipewk/script-icms-st/archive/master.zip
+### 2. Download do bot
+- Baixe o bot a partir do [repositório no GitHub](https://github.com/filipewk/script-icms-st/archive/master.zip).
 
-### 3. Confira a versão do seu chrome e baixe o ChromeDriver com a versão correta abaixo.
+### 3. Verificação da versão do Chrome
+- Verifique a versão do seu Chrome e baixe o ChromeDriver correspondente.
 
-### 4. Baixe o ChromeDriver em: https://chromedriver.chromium.org/downloads
+### 4. Download do ChromeDriver
+- Baixe o ChromeDriver a partir do [site oficial](https://chromedriver.chromium.org/downloads).
 
-### 5. Entre na pasta do BOT e copie o ChromeDriver na raiz do projeto.
+### 5. Configuração do ChromeDriver
+- Mova o ChromeDriver baixado para a raiz do projeto do bot.
 
-### 6. Na pasta do BOT e clique em `install.bat`
+### 6. Instalação das dependências
+- Na pasta do bot, execute `install.bat` para instalar as dependências necessárias.
 
-### 7. Na pasta do BOT coloque os arquivos XML para leitura na pasta `dist/data/xml`
+### 7. Preparação dos arquivos XML
+- Mova os arquivos XML para a pasta `dist/data/xml`.
 
-### 8. O nome do arquivo XML tem que ser o mesmo que sera passado em "numero da NFE" no passo abaixo.
+### 8. Nomeação dos arquivos XML
+- Certifique-se de que o nome do arquivo XML corresponde ao número da NFE que será fornecido no passo seguinte.
 
-### 9. Execute `run-bot.bat` e preencha os dados (numero da NFE, mva a 12%, mva a 04%, aliquota Interna, data de vencimento).
+### 9. Execução do bot
+- Execute `run-bot.bat` e preencha os dados solicitados (número da NFE, mva a 12%, mva a 04%, alíquota interna, data de vencimento).
 
+## 🚀 Início Rápido em 5 Minutos
 
-## :rocket: 5 minutes quick start
-
-### 1. Instalar
+### 1. Instalação
 <div> 
   <img src="readme/install.gif" height="425">
 </div>
 
-### 2. Colocar o xml para a leitura
+### 2. Preparação do XML para leitura
 <div> 
   <img src="readme/xml.gif" height="425">
 </div>
 
-### :white_check_mark: Rodar o BOT
+### 3. Execução do Bot
 <div> 
   <img src="readme/runbot.gif" height="425">
 </div>
 
-## :v: Contribuidores
+## 👥 Contribuidores
 
-[filipewk](https://instagram.com/e3filipe)
+- [filipewk](https://instagram.com/e3filipe)
 
+## 💌 Licença
 
-## :mailbox_with_mail: License
-
-This software was created for study purposes only. Feel free to try it out.
+Este software foi criado apenas para fins de estudo. Sinta-se à vontade para experimentá-lo.
